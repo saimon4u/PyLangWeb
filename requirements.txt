@@ -8,4 +8,4 @@ packaging==23.2
 requests==2.25.1
 virtualenv==20.25.0
 Werkzeug==2.0.2
-gunicorn==22.2.0
+gunicorn==21.2.0
