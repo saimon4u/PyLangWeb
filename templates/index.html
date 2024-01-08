@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PyLang</title>
+    <link rel="stylesheet" href={{ url_for('static', filename='/css/style.css') }}>
+</head>
+<body>
+    <div class="main">
+        <div class="box">
+            <div class="name">
+                <p><a href="/">PyLang</a></p>
+            </div>
+            <div class="description">
+                <p>A simple programming language written in Python</p>
+            </div>
+            <div class="download">
+                <p>pip install ....</p>
+            </div>
+            <div class="btn">
+                <div class="playground button">
+                    <a href="#Playground">
+                        Playground
+                    </a>
+                </div>
+                <div class="source button"><a href="https://www.github.com/saimon4u/PyLang" target="_blank" >Source Code</a></div>
+                <div class="documentation button"><a href="#Documentation">
+                    Documentation
+                </a></div>
+            </div>
+            <div class="creator"></div>
+        </div>
+    </div>
+    <div class="playground_box" id="Playground">
+        <div class="p_title_box">
+            <div class="p_text_box">
+                <h1>Playground</h1>
+            </div>
+            <div class="p_btn_box">
+                <div class="run button" id="run_btn" onclick= getOutput()>Run</div>
+                <div class="clear button" id="clear_btn" onclick= clearScreen()>Clear</div>
+            </div>
+        </div>
+        <div class="p_main_box">
+            <div class="code_box">
+                <textarea class="code_area" id="code_area" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false" data-gramm="false">
+$This is a code sample of binary search in PyLang
+
+fun search(list, first, last, target)
+    if first <= last then
+        let mid = int((first+last)/2)
+        if target == (list/mid) then
+            return mid
+        elif target < (list/mid) then
+            return search(list, first, mid-1, target)
+        else
+            return search(list, mid+1, last, target)
+        end
+    end
+    return -1
+end
+                
+                
+let list = [1,2,3,4,5,6,7]
+                
+let value = 12
+                
+let index = search(list, 0, len(list)-1, value)
+                
+                
+if index != -1 then
+    println(str(value) + " found in index " + str(index))
+else
+    println(str(value) + " is not found in the list")
+end
+print("This is the list: ")
+print(list)
+                </textarea>
+            </div>
+            <div class="output" id="output">
+                <h3>Output Terminal</h3>
+                <p id="p_tag"></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="documentation_box" id="Documentation">
+        <h1>Documentation</h1>
+        <p>PyLang is a simple interpreted language written in python</p>
+        <div class="types">
+            <div class="row">
+                <div class="column">
+                    <h2 style="color: rgb(255, 200, 0);">General</h2>
+                    <p>You can use nextline or semicolon for a multiline program. Also there are built in functions and user defined functions to use. There are input taking system but if you want to use them you have to download the source code and use them on your on machine. You can comment a line using '$' sign.</p>
+                    <div class="example_box">
+<span class="keyword"><b>fun </b></span>add(a, b)
+    <span class="keyword"><b>let </b></span>sum <span class="string operators"><b>= </b></span>a <span class="string operators"><b>+ </b></span> b;
+    <span class="keyword"><b>return </b></span>sum;
+<span class="keyword"><b>end</b></span>
+
+<span class="keyword"><b>let </b></span>a <span class="string operators"><b>= </b></span><span class="value"><b>10 </b></span>
+<span class="keyword"><b>let </b></span>b <span class="string operators"><b>= </b></span><span class="value"><b>a + 5; </b></span>
+<span class="keyword"><b>println(<span class="variable"><b>a</b></span>) </b></span>
+<span class="keyword"><b>print(<span class="variable"><b>add(5, b)</b></span>) </b></span>
+
+$<span class="keyword"><b>print(<span class="variable"><b>add(5, b)</b></span>) </b></span>
+                    </div>
+                </div>
+                <div class="column">
+                    <h2 style="color: rgb(28, 215, 212);">Variable</h2>
+                    <p>Variable can be decalred using <span class="keyword"><b>let</b></span> keyword. <br>Also if you want to re assign a variable you have to use <span class="keyword"><b>let</b></span> keyword.</p>
+                    <div class="example_box">
+<span class="keyword"><b>let </b></span>a <span class="string operators"><b>= </b></span><span class="value"><b>10 </b></span>
+
+<span class="keyword"><b>let </b></span>b <span class="string operators"><b>= </b></span><span class="string"><b>"Hello" </b></span>
+
+<span class="keyword"><b>let </b></span>a <span class="string operators"><b>= </b></span><span class="value"><b>a + 1 </b></span>
+
+<span class="keyword"><b>let </b></span>c <span class="string operators"><b>= </b></span><span class="value"><b>b <span class="string"><b> + "World"</b></span></b></span>
+
+<span class="keyword"><b>let </b></span>d <span class="string operators"><b>= </b></span><span class="value"><b>[1, 2, 3, 4, 5, 6]</b></span>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="column">
+                    <h2 style="color: rgb(191, 40, 211);">Built-ins</h2>
+                    <p>There are many built in functions which you can use. There are 2 function for displaying something on the screen. <span class="keyword"><b>println</b></span> function is used for printing something with a newline and <span class="keyword"><b>print</b></span> for without a newline. You can use <span class="keyword"><b>len</b></span> function to get the length of a list. You can use <span class="keyword"><b>int</b></span>, <span class="keyword"><b>float</b></span> and <span class="keyword"><b>str</b></span> to convert a value to a specific type. You can check the type of a variable or value using <span class="keyword"><b>isNumber</b></span>, <span class="keyword"><b>isString</b></span>, <span class="keyword"><b>isList</b></span> and <span class="keyword"><b>isFunction</b></span> which will return 0 or 1 based on the result.</p>
+                    <div class="example_box">
+<span class="keyword"><b>print(<span class="string"><b>"Hello World!"</b></span>)</b></span>                        
+
+<span class="keyword"><b>println(<span class="string"><b>"Hello World with a new line"</b></span>)</b></span>                        
+
+<span class="keyword"><b>println( len( <span class="value">[1, 2, 3, 4, 5]</span> ) )</b></span>                        
+
+<span class="keyword"><b>let</b></span> a = <span class="keyword"><b>int(<span class="value"><b>1.43</b></span>)</b></span>
+
+<span class="keyword"><b>let</b></span> s = <span class="keyword"><b>str(<span class="value"><b>234</b></span>)</b></span>
+
+<span class="keyword"><b>println( isString(<span class="variable"><b>s</b></span>) )</b></span>
+                    </div>
+                </div>
+                <div class="column">
+                    <h2 style="color: rgb(73, 207, 36);">Functions</h2>
+                    <p>You can define a function using <span class="keyword"><b>fun</b></span> keyword. You can define an one liner function using <span class="keyword"><b>-></b></span> operator or a multiline function as you need. If you define a multiline function you have to put <span class="keyword"><b>end</b></span> keyword at the end of the function. You can assign a function to a variable and then use them with that variable. You can also define anonymous function without name.</p>
+                    <div class="example_box">
+<span class="keyword"><b>fun </b></span>add(a, b)
+    <span class="keyword"><b>let </b></span>sum <span class="string operators"><b>= </b></span>a <span class="string operators"><b>+ </b></span> b;
+    <span class="keyword"><b>return </b></span>sum;
+<span class="keyword"><b>end</b></span>
+
+<span class="keyword"><b>fun </b></span>div(a, b) <span class="operators"><b>-></b></span> a/b;
+
+<span class="keyword"><b>let </b></span> a <span class="operators"><b>= </b></span> <span class="keyword"><b>fun </b></span> () <span class="operators"><b>-></b></span> <span class="keyword"><b>print( <span class="string">"Hello!"</span> )</b></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="column">
+                    <h2 style="color: rgb(54, 235, 133);">Loops</h2>
+                    <p>There are 2 types of loop in pyLang <span class="keyword"><b>for</b></span> loop and <span class="keyword"><b>while</b></span> loop. Basic increment of a <span class="keyword"><b>for</b></span> loop is equal to 1. You can customize increment using <span class="keyword"><b>step</b></span> keyword. You have to define the end point of a loop using <span class="keyword"><b>to</b></span> keyword(inclusive). <span class="keyword"><b>While</b></span> loop doesn't have any step property so you can change the variable as you want inside the loop.</p>
+                    <div class="example_box">
+<span class="keyword"><b>for</b></span> i <span class="operators"><b>=</b></span> 1 <span class="keyword"><b>to</b></span> 6 <span class="keyword"><b>then</b></span>
+    <span class="keyword"><b>println(<span class="string">"Hello World!"</span>)</b></span>
+<span class="keyword"><b>end</b></span>
+
+<span class="keyword"><b>for</b></span> i <span class="operators"><b>=</b></span> 1 <span class="keyword"><b>to</b></span> 11 <span class="keyword"><b>step</b></span> 2 <span class="keyword"><b>then</b></span>
+    <span class="keyword"><b>println(<span class="string">"Hello World with step"</span>)</b></span>
+<span class="keyword"><b>end</b></span>
+
+<span class="keyword"><b>let </b></span> i <span class="operators"><b>=</b></span> 1
+<span class="keyword"><b>while</b></span> i <span class="operators"><b> < </b></span> 10 <span class="keyword"><b>then</b></span>
+    <span class="keyword"><b>println(<span class="value">i</span>)</b></span>
+    <span class="keyword"><b>let </b></span> i <span class="operators"><b>=</b></span> i <span class="operators"><b>+ </b></span> 2
+<span class="keyword"><b>end</b></span>
+                    </div>
+                </div>
+                <div class="column">
+                    <h2 style="color: rgb(189, 202, 11);">Conditionals</h2>
+                    <p>You can use Conditionals with <span class="keyword"><b>if</b></span>, <span class="keyword"><b>elif</b></span> and <span class="keyword"><b>else</b></span> ladder. You can use one liner conditionals as variable initializer. You have to put <span class="keyword"><b>then</b></span> keyword after every condition and <span class="keyword"><b>end</b></span> keyword after a ladder.</p>
+                    <div class="example_box">
+<span class="keyword"><b>let </b></span>a <span class="operators"><b>= </b></span><span class="value"><b> 10</b></span>
+
+<span class="keyword"><b>if </b></span>a <span class="operators"><b> < </b></span><span class="value"><b> 10</b></span> <span class="keyword"><b>then</b></span>
+    <span class="keyword"><b>println(<span class="string">"a is lesser than 10"</span>)</b></span>
+
+<span class="keyword"><b>elif </b></span>a <span class="operators"><b> > </b></span><span class="value"><b> 10</b></span> <span class="keyword"><b>then</b></span>
+    <span class="keyword"><b>println(<span class="string">"a is greater than 10"</span>)</b></span>
+
+<span class="keyword"><b>else </b></span>
+    <span class="keyword"><b>println(<span class="string">"a is equal to 10"</span>)</b>
+</span><span class="keyword"><b>end</b></span>
+
+<span class="keyword"><b>let </b></span> b <span class="operators"><b>=</b></span> <span class="keyword"><b>if </b></span><span class="value">5</span> <span class="operators"><b>==</b></span> <span class="value">5</span> <span class="keyword">then</span> 5 <span class="keyword"><b>else</b></span> 10;
+<span class="keyword"><b>println(<span class="variable">b</span>)</b></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="column">
+                    <h2 style="color: rgb(54, 172, 235);">List</h2>
+                    <p>You can asign a empty <span class="keyword"><b>list</b></span> or a initialized <span class="keyword"><b>list</b></span> to a variable. You can append a new value to a list using <span class="operators"><b>+</b></span> operators. To remove a element from any index use <span class="operators"><b>-</b></span> operators. To concate 2 <span class="keyword"><b>list</b></span> use <span class="operators"><b>*</b></span> operators. Use <span class="operators"><b>/</b></span> operators to obtain a value from a certain index of a <span class="keyword"><b>list</b></span>. Remember all of this operations are immutable operations. You can do mutable operations on <span class="keyword"><b>list</b></span> using built-in functions. You can get the length of a <span class="keyword"><b>list</b></span> using <span class="keyword"><b>len</b></span> built-in function.</p>
+                    <div class="example_box">
+<span class="keyword"><b>let </b></span> a <span class="operators"><b>=</b></span> <span class="value">[]</span>
+<span class="keyword"><b>let </b></span> a <span class="operators"><b>=</b></span> <span class="variable">a</span> <span class="operators"><b>+</b></span> 3
+<span class="keyword"><b>let </b></span> a <span class="operators"><b>=</b></span> <span class="variable">a</span> <span class="operators"><b>+</b></span> 5
+<span class="keyword"><b>println(<span class="variable">a</span>)</b></span>
+
+<span class="keyword"><b>let </b></span> b <span class="operators"><b>=</b></span> <span class="value">[1, 2, 3]</span>
+<span class="keyword"><b>let </b></span> c <span class="operators"><b>=</b></span> <span class="value">a <span class="operators"><b>*</b></span> b</span>
+<span class="keyword"><b>println(<span class="variable">c</span>)</b></span>
+
+<span class="keyword"><b>let </b></span> c <span class="operators"><b>=</b></span> <span class="value">c <span class="operators"><b>-</b></span> 2</span>
+<span class="keyword"><b>println(<span class="variable">c</span>)</b></span>
+<span class="keyword"><b>println(<span class="variable">c <span class="operators"><b>/</b></span> 2</span>)</b></span>
+                    </div>
+                </div>
+                <div class="column">
+                    <h2 style="color: rgb(232, 49, 171);">Mutable Built-ins</h2>
+                    <p>There are plenty of mutable <span class="keyword"><b>list</b></span> function which you can use. More will be added later.<br><span class="keyword"><b>push</b></span> = (reference of a <span class="keyword"><b>list</b></span>, a value to push). It will append the value at the last index.<br><span class="keyword"><b>pop</b></span> = (reference of a <span class="keyword"><b>list</b></span>, index number). It will return the removed element as well.<br><span class="keyword"><b>extend</b></span> = (reference of first <span class="keyword"><b>list</b></span>, reference of second <span class="keyword"><b>list</b></span>). It will append the elements from second <span class="keyword"><b>list</b></span> to first <span class="keyword"><b>list</b></span>.<br><span class="keyword"><b>replace</b></span> = (reference of a <span class="keyword"><b>list</b></span>, index number, a value). It will replace the value of that <span class="keyword"><b>list</b></span> at given index.<br></p>
+                    <div class="example_box">
+<span class="keyword"><b>let </b></span> list <span class="operators"><b>=</b></span> <span class="value">[1, 2, 3, 4, 6]</span>
+<span class="keyword"><b>let </b></span> a <span class="operators"><b>=</b></span> <span class="value">[1, 2]</span>
+
+<span class="keyword"><b>push(<span class="variable">list, 3</span>)</b></span>
+<span class="keyword"><b>println(<span class="variable">list</span>)</b></span>
+
+<span class="keyword"><b>let </b></span> element <span class="operators"><b>=</b></span> <span class="keyword"><b>pop(<span class="variable">list, 2</span>)</b></span>
+<span class="keyword"><b>println(<span class="variable">element</span>)</b></span>
+<span class="keyword"><b>println(<span class="variable">list</span>)</b></span>
+
+<span class="keyword"><b>extend(<span class="variable">list, a</span>)</b></span>
+<span class="keyword"><b>println(<span class="variable">list</span>)</b></span>
+
+<span class="keyword"><b>replace(<span class="variable">list, 1, 100</span>)</b></span>
+<span class="keyword"><b>println(<span class="variable">list</span>)</b></span>       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src={{ url_for('static', filename='/js/index.js') }}></script>
+</body>
+</html>
