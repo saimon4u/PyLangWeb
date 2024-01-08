@@ -242,6 +242,29 @@ $<span class="keyword"><b>print(<span class="variable"><b>add(5, b)</b></span>) 
                     </div>
                 </div>
             </div>
+
+            <div class="row">
+                <div class="column">
+                    <h2 style="color: rgb(208, 235, 54);">Logical Operators</h2>
+                    <p>You can use logical comparison via <span class="keyword"><b>and</b></span>, <span class="keyword"><b>or</b></span>, and <span class="keyword"><b>not</b></span>. You can also use boolean <span class="keyword"><b>true</b></span>, <span class="keyword"><b>false</b></span>, <span class="keyword"><b>null</b></span> as variable initializer or comparison.</p>
+                    <div class="example_box">
+<span class="keyword"><b>if</b></span> true <span class="keyword"><b>then</b></span>
+    <span class="keyword"><b>println(<span class="string">"This is true."</span>)</b></span>
+
+<span class="keyword"><b>let </b></span>a <span class="operators"><b>=</b></span> <span class="value">4</span>
+<span class="keyword"><b>if</b></span> a <span class="operators"><b><</b></span> 10 <span class="keyword"><b>and</b></span> a <span class="operators"><b>></b></span> 0 <span class="keyword"><b>then</b></span>
+    <span class="keyword"><b>println(<span class="string">"a is between 1 and 9"</span>)</b></span>
+<span class="keyword"><b>end</b></span>
+
+<span class="keyword"><b>let </b></span>flag <span class="operators"><b>=</b></span> <span class="value">false</span>
+<span class="keyword"><b>if</b></span> <span class="keyword"><b>not</b></span> flag <span class="keyword"><b>then</b></span>
+    <span class="keyword"><b>println(<span class="string">"flag is false"</span>)</b></span>
+<span class="keyword"><b>else</b></span>
+    <span class="keyword"><b>println(<span class="string">"flag is true"</span>)</b></span>
+<span class="keyword"><b>end</b></span>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <script src={{ url_for('static', filename='/js/index.js') }}></script>
