@@ -219,7 +219,7 @@ class Parser:
         return self.power()
 
     def term(self):
-        return self.binaryOperation(self.factor, (Constant.TT_MUL, Constant.TT_DIV))
+        return self.binaryOperation(self.factor, (Constant.TT_MUL, Constant.TT_DIV, Constant.TT_MOD))
 
     def expression(self):
         res = ParseResult()

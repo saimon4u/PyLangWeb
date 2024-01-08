@@ -31,6 +31,9 @@ class Value:
     def division(self, other):
         return None, self.illegalOperation(other)
 
+    def modulo(self, other):
+        return None, self.illegalOperation(other)
+
     def power(self, other):
         return None, self.illegalOperation(other)
 
@@ -101,6 +104,14 @@ class Number(Value):
     def multiplication(self, other):
         if isinstance(other, Number):
             return Number(self.value * other.value).setContext(self.context), None
+        else:
+            return None, Value.illegalOperation(self, other)
+
+    def modulo(self, other):
+        if isinstance(other, Number):
+            if other.value == 0:
+                return None, RunningTimeError(other.startPos, other.endPos, "Modulo by zero", self.context)
+            return Number(self.value % other.value).setContext(self.context), None
         else:
             return None, Value.illegalOperation(self, other)
 

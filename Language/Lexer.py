@@ -48,6 +48,10 @@ class Lexer:
                 tokens.append(Token(Constant.TT_POW, startPos=self.position))
                 self.advance()
 
+            elif self.currentChar == '%':
+                tokens.append(Token(Constant.TT_MOD, startPos=self.position))
+                self.advance()
+
             elif self.currentChar == ',':
                 tokens.append(Token(Constant.TT_COMMA, startPos=self.position))
                 self.advance()

@@ -90,6 +90,9 @@ class Interpreter:
         elif node.opTok.tokenType == Constant.TT_DIV:
             result, error = left.division(right)
 
+        elif node.opTok.tokenType == Constant.TT_MOD:
+            result, error = left.modulo(right)
+
         elif node.opTok.tokenType == Constant.TT_POW:
             result, error = left.power(right)
 
