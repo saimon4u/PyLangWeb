@@ -274,20 +274,23 @@
 }
 
 .types{
-    margin-top: 20px;
+    margin-top: 30px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-evenly;
 }
 
 .row{
     display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    margin-top: 30px;
+    /* align-items: center;
+    justify-content: center; */
+    /* margin-top: 30px; */
+    gap: 35px;
+    flex-direction: column;
 }
 
 .column{
-    height: 400px;
+    height: fit-content;
     width: 40vw;
     border: 1px solid white;
     display: flex;
@@ -314,7 +317,7 @@
 }
 
 .example_box{
-    height: 400px;
+    height: fit-content;
     width: 500px;
     background-color: #333;
     margin-top: 10px;
@@ -323,8 +326,6 @@
     padding-bottom: 10px;
     font-size: 20px;
     color: white;
-    scroll-behavior: smooth;
-    overflow-y: scroll;
     white-space: pre-wrap;
 }
 
@@ -338,4 +339,19 @@
 
 .variable{
     color: white;
+}
+
+.footer{
+    height: 100px;
+    width: 100vw;
+    accent-color: #6647e0;
+    background-color: #130f1d;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+
+.copyright{
+    color: white;
+    margin-bottom: 15px;
 }

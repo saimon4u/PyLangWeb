@@ -33,3 +33,22 @@ function clearScreen(){
     terminal.textContent = null
 
 }
+
+
+document.getElementById('code_area').onkeydown = function(e) {
+    if (e.keyCode === 9) {
+        this.setRangeText(
+
+            '    ',
+
+            this.selectionStart,
+
+            this.selectionStart,
+
+            'end'
+
+        )
+
+        return false;
+    }
+};
